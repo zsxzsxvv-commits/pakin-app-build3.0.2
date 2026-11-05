@@ -20,7 +20,6 @@ jobs:
           sed -i '' '/Info.plist in Resources/d' PAKIN_EPIC.xcodeproj/project.pbxproj
           cp Core/*/*.swift Core/ 2>/dev/null || true
           cp Features/*/*.swift Features/ 2>/dev/null || true
-          cp Models/*/*.swift Models/ 2>/dev/null || true
 
       - name: Build Xcode Archive
         run: |
@@ -34,25 +33,13 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             archive
 
-      - name: Package Unsigned IPA for GBOX (14MB+ Standard Package)
+      - name: Package Unsigned IPA for GBOX
         run: |
           mkdir -p build/Payload
           cp -r build/PAKIN_EPIC.xcarchive/Products/Applications/PAKIN_EPIC.app build/Payload/
-          
-          # Inject HD Resource Bundle to guarantee 12-16MB standard IPA package size
-          mkdir -p build/Payload/PAKIN_EPIC.app/CoreAssets.bundle
-          if [ -f "Resources/CoreAssets.bundle/AssetsData.bin" ]; then
-            cp "Resources/CoreAssets.bundle/AssetsData.bin" "build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/"
-          else
-            dd if=/dev/urandom of=build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/AssetsData.bin bs=1048576 count=14 2>/dev/null || true
-          fi
-          
           cd build
           zip -r PAKIN_EPIC_CLOCK.ipa Payload
           cd ..
-          
-          echo "IPA Size:"
-          ls -lh build/PAKIN_EPIC_CLOCK.ipa
 
       - name: Upload IPA for Download
         uses: actions/upload-artifact@v4
