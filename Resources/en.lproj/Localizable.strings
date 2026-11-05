@@ -1,0 +1,45 @@
+/* PAKIN EPIC English Localization */
+"app.name" = "PAKIN EPIC";
+"app.subtitle" = "MobileGestalt & 3105 Patch Engine";
+"license.secure_access" = "SECURE LICENSE ACCESS";
+"license.enter_key" = "Enter License Key to access PAKIN EPIC";
+"license.key_placeholder" = "Enter your key";
+"license.verifying" = "Verifying…";
+"license.activate" = "Verify & Activate";
+"license.verified_access" = "PAKIN EPIC • VERIFIED ACCESS";
+"license.active" = "License Active";
+"license.inactive" = "License Inactive";
+"license.sign_out" = "Sign Out License";
+"license.expired_session" = "Session expired. Please verify License again.";
+
+"dashboard.kernel_status" = "Kernel Status";
+"dashboard.run_exploit" = "Run Exploit";
+"dashboard.active" = "Active";
+"dashboard.inactive" = "Inactive";
+"dashboard.ready_to_edit" = "Ready to edit";
+
+"gestalt.title" = "Gestalt Editor";
+"gestalt.action_button" = "Action Button";
+"gestalt.always_on_display" = "Always On Display";
+"gestalt.apple_intelligence" = "Apple Intelligence";
+"gestalt.stage_manager" = "Stage Manager";
+"gestalt.metal_hud" = "Metal HUD";
+"gestalt.apply_changes" = "Apply Changes";
+"gestalt.reboot_device" = "Reboot Device";
+
+"patch.title" = "Patches";
+"patch.new" = "New Patch";
+"patch.apply" = "Apply Patch";
+"patch.restore" = "Restore Originals";
+
+"wallpaper.title" = "Wallpapers";
+"wallpaper.reset" = "Reset Collections";
+
+"cleaner.title" = "Cleaner";
+"cleaner.clean_now" = "Clean Now";
+
+"sources.title" = "Sources";
+"sources.add" = "Add Repository";
+
+"settings.title" = "Settings";
+"settings.developer_mode" = "Developer Mode";

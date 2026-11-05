@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA010001 /* PAKIN_EPICApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB010001 /* PAKIN_EPICApp.swift */; };
+		AA010002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB010002 /* ContentView.swift */; };
+		AA020001 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB020001 /* AppConfig.swift */; };
+		AA030001 /* HTVLicenseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB030001 /* HTVLicenseAPI.swift */; };
+		AA040001 /* HTVLicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB040001 /* HTVLicenseManager.swift */; };
+		AA040002 /* HTVLicenseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB040002 /* HTVLicenseError.swift */; };
+		AA050001 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB050001 /* AppLog.swift */; };
+		AA050002 /* DeviceUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB050002 /* DeviceUtility.swift */; };
+		AA060001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060001 /* AppState.swift */; };
+		AA060002 /* LicenseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060002 /* LicenseModels.swift */; };
+		AA060003 /* PatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060003 /* PatchModels.swift */; };
+		AA060004 /* RepositoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060004 /* RepositoryModels.swift */; };
+		AA060005 /* WallpaperModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060005 /* WallpaperModels.swift */; };
+		AA070001 /* HTVScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB070001 /* HTVScreenBackground.swift */; };
+		AA070002 /* HTVSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB070002 /* HTVSectionHeader.swift */; };
+		AA070003 /* HTVComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB070003 /* HTVComponents.swift */; };
+		AA080001 /* HTVLicenseGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080001 /* HTVLicenseGateView.swift */; };
+		AA080002 /* RepositoryHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080002 /* RepositoryHomeView.swift */; };
+		AA080003 /* GestaltEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080003 /* GestaltEditorView.swift */; };
+		AA080004 /* AppDataBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080004 /* AppDataBrowserView.swift */; };
+		AA080005 /* PatchProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080005 /* PatchProjectsView.swift */; };
+		AA080006 /* WallpapersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080006 /* WallpapersView.swift */; };
+		AA080007 /* CleanerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080007 /* CleanerView.swift */; };
+		AA080008 /* RepositorySourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080008 /* RepositorySourcesView.swift */; };
+		AA080009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080009 /* SettingsView.swift */; };
+		AA080010 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080010 /* OnboardingView.swift */; };
+		AA080011 /* ClockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080011 /* ClockModels.swift */; };
+		AA080012 /* WorldClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080012 /* WorldClockView.swift */; };
+		AA080013 /* AlarmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080013 /* AlarmsView.swift */; };
+		AA080014 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080014 /* StopwatchView.swift */; };
+		AA080015 /* TimerCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080015 /* TimerCountdownView.swift */; };
+		AA080016 /* ClockRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080016 /* ClockRootView.swift */; };
+		AA060006 /* FreeFireModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB060006 /* FreeFireModels.swift */; };
+		AA050003 /* CloudConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB050003 /* CloudConfigManager.swift */; };
+		AA080017 /* FreeFireHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB080017 /* FreeFireHubView.swift */; };
+		AA090001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB090001 /* Assets.xcassets */; };
+		AA090002 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB090002 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11010001 /* PAKIN_EPIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PAKIN_EPIC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB010001 /* PAKIN_EPICApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAKIN_EPICApp.swift; sourceTree = "<group>"; };
+		BB010002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB020001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		BB030001 /* HTVLicenseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVLicenseAPI.swift; sourceTree = "<group>"; };
+		BB040001 /* HTVLicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVLicenseManager.swift; sourceTree = "<group>"; };
+		BB040002 /* HTVLicenseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVLicenseError.swift; sourceTree = "<group>"; };
+		BB050001 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
+		BB050002 /* DeviceUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtility.swift; sourceTree = "<group>"; };
+		BB060001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		BB060002 /* LicenseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModels.swift; sourceTree = "<group>"; };
+		BB060003 /* PatchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchModels.swift; sourceTree = "<group>"; };
+		BB060004 /* RepositoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModels.swift; sourceTree = "<group>"; };
+		BB060005 /* WallpaperModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperModels.swift; sourceTree = "<group>"; };
+		BB070001 /* HTVScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVScreenBackground.swift; sourceTree = "<group>"; };
+		BB070002 /* HTVSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVSectionHeader.swift; sourceTree = "<group>"; };
+		BB070003 /* HTVComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVComponents.swift; sourceTree = "<group>"; };
+		BB080001 /* HTVLicenseGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVLicenseGateView.swift; sourceTree = "<group>"; };
+		BB080002 /* RepositoryHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHomeView.swift; sourceTree = "<group>"; };
+		BB080003 /* GestaltEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestaltEditorView.swift; sourceTree = "<group>"; };
+		BB080004 /* AppDataBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataBrowserView.swift; sourceTree = "<group>"; };
+		BB080005 /* PatchProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectsView.swift; sourceTree = "<group>"; };
+		BB080006 /* WallpapersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersView.swift; sourceTree = "<group>"; };
+		BB080007 /* CleanerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerView.swift; sourceTree = "<group>"; };
+		BB080008 /* RepositorySourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySourcesView.swift; sourceTree = "<group>"; };
+		BB080009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BB080010 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BB080011 /* ClockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModels.swift; sourceTree = "<group>"; };
+		BB080012 /* WorldClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockView.swift; sourceTree = "<group>"; };
+		BB080013 /* AlarmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsView.swift; sourceTree = "<group>"; };
+		BB080014 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
+		BB080015 /* TimerCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCountdownView.swift; sourceTree = "<group>"; };
+		BB080016 /* ClockRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockRootView.swift; sourceTree = "<group>"; };
+		BB060006 /* FreeFireModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeFireModels.swift; sourceTree = "<group>"; };
+		BB050003 /* CloudConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfigManager.swift; sourceTree = "<group>"; };
+		BB080017 /* FreeFireHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeFireHubView.swift; sourceTree = "<group>"; };
+		BB090001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB090002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22010001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33010001 = {
+			isa = PBXGroup;
+			children = (
+				33010002 /* App */,
+				33010003 /* Core */,
+				33010004 /* Features */,
+				33010005 /* Models */,
+				33010006 /* Components */,
+				33010007 /* Resources */,
+				33010008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33010002 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB010001 /* PAKIN_EPICApp.swift */,
+				BB010002 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		33010003 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB020001 /* AppConfig.swift */,
+				BB030001 /* HTVLicenseAPI.swift */,
+				BB040001 /* HTVLicenseManager.swift */,
+				BB040002 /* HTVLicenseError.swift */,
+				BB050001 /* AppLog.swift */,
+				BB050002 /* DeviceUtility.swift */,
+				BB050003 /* CloudConfigManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		33010004 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				33010009 /* Clock */,
+				BB080001 /* HTVLicenseGateView.swift */,
+				BB080002 /* RepositoryHomeView.swift */,
+				BB080003 /* GestaltEditorView.swift */,
+				BB080004 /* AppDataBrowserView.swift */,
+				BB080005 /* PatchProjectsView.swift */,
+				BB080006 /* WallpapersView.swift */,
+				BB080007 /* CleanerView.swift */,
+				BB080008 /* RepositorySourcesView.swift */,
+				BB080009 /* SettingsView.swift */,
+				BB080010 /* OnboardingView.swift */,
+				BB080017 /* FreeFireHubView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		33010009 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				BB080011 /* ClockModels.swift */,
+				BB080012 /* WorldClockView.swift */,
+				BB080013 /* AlarmsView.swift */,
+				BB080014 /* StopwatchView.swift */,
+				BB080015 /* TimerCountdownView.swift */,
+				BB080016 /* ClockRootView.swift */,
+			);
+			path = Clock;
+			sourceTree = "<group>";
+		};
+		33010005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB060001 /* AppState.swift */,
+				BB060002 /* LicenseModels.swift */,
+				BB060003 /* PatchModels.swift */,
+				BB060004 /* RepositoryModels.swift */,
+				BB060005 /* WallpaperModels.swift */,
+				BB060006 /* FreeFireModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33010006 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BB070001 /* HTVScreenBackground.swift */,
+				BB070002 /* HTVSectionHeader.swift */,
+				BB070003 /* HTVComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		33010007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB090001 /* Assets.xcassets */,
+				BB090002 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		33010008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11010001 /* PAKIN_EPIC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44010001 /* PAKIN_EPIC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55010001 /* Build configuration list for PBXNativeTarget "PAKIN_EPIC" */;
+			buildPhases = (
+				66010001 /* Sources */,
+				22010001 /* Frameworks */,
+				77010001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PAKIN_EPIC;
+			productName = PAKIN_EPIC;
+			productReference = 11010001 /* PAKIN_EPIC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00010001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					44010001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 55010002 /* Build configuration list for PBXProject "PAKIN_EPIC" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				th,
+				vi,
+				"zh-Hans",
+			);
+			mainGroup = 33010001;
+			productRefGroup = 33010008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44010001 /* PAKIN_EPIC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77010001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA090001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66010001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA010001 /* PAKIN_EPICApp.swift in Sources */,
+				AA010002 /* ContentView.swift in Sources */,
+				AA020001 /* AppConfig.swift in Sources */,
+				AA030001 /* HTVLicenseAPI.swift in Sources */,
+				AA040001 /* HTVLicenseManager.swift in Sources */,
+				AA040002 /* HTVLicenseError.swift in Sources */,
+				AA050001 /* AppLog.swift in Sources */,
+				AA050002 /* DeviceUtility.swift in Sources */,
+				AA060001 /* AppState.swift in Sources */,
+				AA060002 /* LicenseModels.swift in Sources */,
+				AA060003 /* PatchModels.swift in Sources */,
+				AA060004 /* RepositoryModels.swift in Sources */,
+				AA060005 /* WallpaperModels.swift in Sources */,
+				AA070001 /* HTVScreenBackground.swift in Sources */,
+				AA070002 /* HTVSectionHeader.swift in Sources */,
+				AA070003 /* HTVComponents.swift in Sources */,
+				AA080001 /* HTVLicenseGateView.swift in Sources */,
+				AA080002 /* RepositoryHomeView.swift in Sources */,
+				AA080003 /* GestaltEditorView.swift in Sources */,
+				AA080004 /* AppDataBrowserView.swift in Sources */,
+				AA080005 /* PatchProjectsView.swift in Sources */,
+				AA080006 /* WallpapersView.swift in Sources */,
+				AA080007 /* CleanerView.swift in Sources */,
+				AA080008 /* RepositorySourcesView.swift in Sources */,
+				AA080009 /* SettingsView.swift in Sources */,
+				AA080010 /* OnboardingView.swift in Sources */,
+				AA080011 /* ClockModels.swift in Sources */,
+				AA080012 /* WorldClockView.swift in Sources */,
+				AA080013 /* AlarmsView.swift in Sources */,
+				AA080014 /* StopwatchView.swift in Sources */,
+				AA080015 /* TimerCountdownView.swift in Sources */,
+				AA080016 /* ClockRootView.swift in Sources */,
+				AA060006 /* FreeFireModels.swift in Sources */,
+				AA050003 /* CloudConfigManager.swift in Sources */,
+				AA080017 /* FreeFireHubView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		88010001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88010002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88010003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.1.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.mobile.MobileHouseArrest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88010004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.1.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.mobile.MobileHouseArrest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55010001 /* Build configuration list for PBXNativeTarget "PAKIN_EPIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88010003 /* Debug */,
+				88010004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55010002 /* Build configuration list for PBXProject "PAKIN_EPIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88010001 /* Debug */,
+				88010002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00010001 /* Project object */;
+}
