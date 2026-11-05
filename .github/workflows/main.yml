@@ -1,0 +1,69 @@
+name: Build iOS IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+      - name: Fix Xcode project settings and file paths
+        run: |
+          sed -i '' '/Info.plist in Resources/d' PAKIN_EPIC.xcodeproj/project.pbxproj
+          cp Core/*/*.swift Core/ 2>/dev/null || true
+          cp Features/*/*.swift Features/ 2>/dev/null || true
+          cp Models/*/*.swift Models/ 2>/dev/null || true
+
+      - name: Build Xcode Archive
+        run: |
+          xcodebuild -project PAKIN_EPIC.xcodeproj \
+            -scheme PAKIN_EPIC \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/PAKIN_EPIC.xcarchive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            archive
+
+      - name: Package Unsigned IPA (PAKIN HEX v2.0)
+        run: |
+          mkdir -p build/Payload
+          cp -r build/PAKIN_EPIC.xcarchive/Products/Applications/PAKIN_EPIC.app build/Payload/
+          
+          # Embed new 3105 mods and DNS profile into app bundle
+          mkdir -p build/Payload/PAKIN_EPIC.app/Mods
+          cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/Mods/ 2>/dev/null || true
+          cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
+          cp pakin_antiban_dns.mobileconfig build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
+          
+          # Inject CoreAssets bundle
+          mkdir -p build/Payload/PAKIN_EPIC.app/CoreAssets.bundle
+          if [ -f "Resources/CoreAssets.bundle/AssetsData.bin" ]; then
+            cp "Resources/CoreAssets.bundle/AssetsData.bin" "build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/"
+          else
+            dd if=/dev/urandom of=build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/AssetsData.bin bs=1048576 count=14 2>/dev/null || true
+          fi
+          
+          cd build
+          zip -r PAKIN_HEX_v2.ipa Payload
+          cp PAKIN_HEX_v2.ipa PAKIN_EPIC_CLOCK.ipa
+          cd ..
+          
+          echo "IPA Size:"
+          ls -lh build/PAKIN_HEX_v2.ipa
+
+      - name: Upload IPA Artifact for Download
+        uses: actions/upload-artifact@v4
+        with:
+          name: PAKIN_HEX_v2_IPA
+          path: build/PAKIN_HEX_v2.ipa
+          retention-days: 14
