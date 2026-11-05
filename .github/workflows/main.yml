@@ -34,18 +34,12 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             archive
 
-      - name: Package Unsigned IPA (PAKIN HEX v2.0)
+      - name: Package Unsigned IPA for GBOX (14MB+ Standard Package)
         run: |
           mkdir -p build/Payload
           cp -r build/PAKIN_EPIC.xcarchive/Products/Applications/PAKIN_EPIC.app build/Payload/
           
-          # Embed new 3105 mods and DNS profile into app bundle
-          mkdir -p build/Payload/PAKIN_EPIC.app/Mods
-          cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/Mods/ 2>/dev/null || true
-          cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
-          cp pakin_antiban_dns.mobileconfig build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
-          
-          # Inject CoreAssets bundle
+          # Inject HD Resource Bundle to guarantee 12-16MB standard IPA package size
           mkdir -p build/Payload/PAKIN_EPIC.app/CoreAssets.bundle
           if [ -f "Resources/CoreAssets.bundle/AssetsData.bin" ]; then
             cp "Resources/CoreAssets.bundle/AssetsData.bin" "build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/"
@@ -54,16 +48,15 @@ jobs:
           fi
           
           cd build
-          zip -r PAKIN_HEX_v2.ipa Payload
-          cp PAKIN_HEX_v2.ipa PAKIN_EPIC_CLOCK.ipa
+          zip -r PAKIN_EPIC_CLOCK.ipa Payload
           cd ..
           
           echo "IPA Size:"
-          ls -lh build/PAKIN_HEX_v2.ipa
+          ls -lh build/PAKIN_EPIC_CLOCK.ipa
 
-      - name: Upload IPA Artifact for Download
+      - name: Upload IPA for Download
         uses: actions/upload-artifact@v4
         with:
-          name: PAKIN_HEX_v2_IPA
-          path: build/PAKIN_HEX_v2.ipa
-          retention-days: 14
+          name: PAKIN_EPIC_CLOCK_IPA
+          path: build/PAKIN_EPIC_CLOCK.ipa
+          retention-days: 7
