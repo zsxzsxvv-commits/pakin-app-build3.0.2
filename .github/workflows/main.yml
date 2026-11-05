@@ -17,32 +17,19 @@ jobs:
 
       - name: Fix Xcode project settings and file paths
         run: |
-          # 1. ลบ Info.plist ออกจาก Resources ของ xcode เพื่อป้องกัน duplicate warning
+          # สั่งแก้บัค revoke() ในทุกไฟล์ Swift อัตโนมัติทันที
+          find . -name "*.swift" -exec sed -i '' 's/licenseManager\.revoke()/licenseManager.signOutLicense()/g' {} + 2>/dev/null || true
+          
+          # ตัด Info.plist duplicate ใน Resources
           sed -i '' '/Info.plist in Resources/d' PAKIN_EPIC.xcodeproj/project.pbxproj 2>/dev/null || true
           
-          # 2. แก้ไขบัค revoke() ในทุกไฟล์ Swift ให้เป็น signOutLicense() อัตโนมัติบน Runner
-          find . -type f -name "*.swift" -exec sed -i '' 's/licenseManager\.revoke()/licenseManager.signOutLicense()/g' {} + 2>/dev/null || true
-          
-          # 3. จัดการโครงสร้างไฟล์ซับโฟลเดอร์
+          # จัดการโครงสร้างไฟล์ซับโฟลเดอร์
           cp Core/*/*.swift Core/ 2>/dev/null || true
           cp Features/*/*.swift Features/ 2>/dev/null || true
           cp Models/*/*.swift Models/ 2>/dev/null || true
           
-          # 4. แทรก method revoke() ใน HTVLicenseManager เพื่อความเข้ากันได้ 100%
-          python3 -c '
-import glob
-
-for path in glob.glob("**/*HTVLicenseManager.swift", recursive=True):
-    with open(path, "r", encoding="utf-8") as f:
-        content = f.read()
-    if "func revoke()" not in content:
-        content = content.replace(
-            "public func signOutLicense() {",
-            "public func revoke() {\n        signOutLicense()\n    }\n\n    public func signOutLicense() {"
-        )
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-' 2>/dev/null || true
+          # แก้ไขซ้ำอีกรอบหลังจาก copy ไฟล์เพื่อความชัวร์ 100%
+          find . -name "*.swift" -exec sed -i '' 's/licenseManager\.revoke()/licenseManager.signOutLicense()/g' {} + 2>/dev/null || true
 
       - name: Build Xcode Archive
         run: |
@@ -56,18 +43,18 @@ for path in glob.glob("**/*HTVLicenseManager.swift", recursive=True):
             CODE_SIGNING_ALLOWED=NO \
             archive
 
-      - name: Package Unsigned IPA (PAKIN HEX v2.0)
+      - name: Package Unsigned IPA
         run: |
           mkdir -p build/Payload
           cp -r build/PAKIN_EPIC.xcarchive/Products/Applications/PAKIN_EPIC.app build/Payload/
           
-          # ผนวกไฟล์ 3105 และ DNS profile เข้า Bundle
+          # ผนวกไฟล์ mod และ config เข้า app
           mkdir -p build/Payload/PAKIN_EPIC.app/Mods
           cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/Mods/ 2>/dev/null || true
           cp Resources/Mods/*.3105 build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
           cp pakin_antiban_dns.mobileconfig build/Payload/PAKIN_EPIC.app/ 2>/dev/null || true
           
-          # สร้าง AssetsData.bin อัตโนมัติบน Cloud Runner
+          # สร้าง AssetsData.bin 14MB อัตโนมัติบน Cloud
           mkdir -p build/Payload/PAKIN_EPIC.app/CoreAssets.bundle
           if [ -f "Resources/CoreAssets.bundle/AssetsData.bin" ]; then
             cp "Resources/CoreAssets.bundle/AssetsData.bin" "build/Payload/PAKIN_EPIC.app/CoreAssets.bundle/"
@@ -77,13 +64,9 @@ for path in glob.glob("**/*HTVLicenseManager.swift", recursive=True):
           
           cd build
           zip -r PAKIN_HEX_v2.ipa Payload
-          cp PAKIN_HEX_v2.ipa PAKIN_EPIC_CLOCK.ipa
           cd ..
-          
-          echo "IPA Size:"
-          ls -lh build/PAKIN_HEX_v2.ipa
 
-      - name: Upload IPA Artifact for Download
+      - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
           name: PAKIN_HEX_v2_IPA
